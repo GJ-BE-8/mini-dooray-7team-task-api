@@ -1,0 +1,76 @@
+### 유저가 속한 프로젝트들 조회
+GET http://localhost:8080/users/user1/projects
+
+### 프로젝트 등록
+POST http://localhost:8080/users/user2/projects
+Content-Type: application/json
+Accept: application/json
+
+{
+   "projectName": "Project8",
+   "projectStatus": "ACTIVE"
+}
+
+### 프로젝트에 작업 등록
+POST http://localhost:8080/projects/7/tasks
+Content-Type: application/json
+Accept: application/json
+
+{
+  "taskName": "task5",
+  "taskContent": "content5"
+}
+
+### 프로젝트에 등록된 작업 조회
+GET http://localhost:8080/projects/7/tasks
+
+### 프로젝트에 속한 작업 삭제
+DELETE http://localhost:8080/projects/7/tasks/1
+
+### 프로젝트에 대한 작업 업데이트
+PATCH http://localhost:8080/projects/7/tasks/3
+Content-Type: application/json
+Accept: application/json
+
+{
+  "taskName": "task6",
+  "taskContent": "content6"
+}
+
+### 작업에 마일스톤 등록
+POST http://localhost:8080/tasks/2/milestone
+Content-Type: application/json
+Accept: application/json
+
+{
+  "milestoneName": "milestone1"
+}
+
+### 작업에서 마일스톤 삭제
+DELETE http://localhost:8080/tasks/2/milestone
+
+
+### 작업에 태그 등록
+POST http://localhost:8080/tasks/3/tag
+Content-Type: application/json
+Accept: application/json
+
+{
+  "tagName": "tag1"
+}
+
+
+### 작업에서 태그 삭제
+DELETE http://localhost:8080/tasks/2/tag/1
+Content-Type: application/json
+Accept: application/json
+
+### 작업에 comment 등록
+POST http://localhost:8080/tasks/2/users/user2/comments
+Content-Type: application/json
+Accept: application/json
+
+{
+  "commentContent": "comment1"
+}
+
